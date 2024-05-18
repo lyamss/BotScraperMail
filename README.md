@@ -14,3 +14,7 @@ cd ./bin/Debug/net8.0
 ```
 ./BotScraper.exe "https://github.com/maximegmd"
 ```
+
+```
+./BotScraper.exe "https://gazator3.github.io/recursiv/"
+```
