@@ -1,15 +1,18 @@
-﻿using BotScraper.Interfaces;
-using BotScraper.Service;
+﻿using BotScraper.Service;
 using HtmlAgilityPack;
 
 
-namespace BotScarper
+namespace BotScraper
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            ArtASCII.ShowASCII();
+
+            if (args.Length == 0 || args[0] is null)
+            {
+                throw new Exception("Args is null");
+            }
 
             string URL = args[0];
 
@@ -18,13 +21,16 @@ namespace BotScarper
                 throw new Exception("URL is not valid");
             }
 
-            string emailsFile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\emails.txt";
+            ArtASCII.ShowASCII();
+
+            string emailsFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\emails.txt";
 
             var page = new MyWebBrowser();
-            HtmlDocument html  = page.GetHtml(URL);
+            HtmlDocument html = page.GetHtml(URL);
 
-            IAmTheTest emailScraper = new MyEmailScraper(emailsFile);
-            emailScraper.GetEmailsInPageAndChildPages(html, URL);
+            new MyEmailScraper(emailsFile).GetEmailsInPageAndChildPages(html, URL);
+
+            Console.ResetColor();
         }
     }
 }

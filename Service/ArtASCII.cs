@@ -1,11 +1,12 @@
-﻿using System;
-namespace BotScraper.Service
+﻿namespace BotScraper.Service
 {
     public static class ArtASCII
     {
         public static void ShowASCII()
         {
             string botScraperArt = @"
+
+
                         ______  _____  __  __  ______
                        /_____/\ /_____/\ \/ / /_____/
                        \:::_ \ \:::_ \ \  / / \:::_ \
@@ -21,8 +22,19 @@ namespace BotScraper.Service
                            \:\_\_\ \:\_\_\ \:\_\_\ \:\_\_\
                             \:_____\/_____\/_____\/_____/
                              \/_____/\/_____/\/_____/\/
+
+
+ ____        _   ____                                        💀
+|  _ \\      | | / ___|  ___ _ __ __ _ _ __  _ __   ___ _ __ 
+| |_) | ___ | |_\\___ \\ / __| '__/ _\` | '_ \\| '_ \\ / _ \\ '__|
+|  _ < / _ \\| __| ___) | (__| | | (_| | |_) | |_) |  __/ |   
+|_| \\_\\\\___/ \\__|____/ \\___|_|  \\__,_| .__/| .__/ \\___|_|   
+                                     |_|   |_|   
                         ";
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(botScraperArt);
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
         }
     }
 }

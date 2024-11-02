@@ -1,6 +1,10 @@
 # BotScraper
 Project to create a BotScraper to get mail in page web
 
+![Terminal](./Terminal.png)
+
+![Mail file](./MailFile.png)
+
 *Start projet*
 
 ```
